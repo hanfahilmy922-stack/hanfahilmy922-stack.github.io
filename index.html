@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hilmy Hanfa Zainab | Computer Science Undergraduate</title>
+
+  <meta name="description"
+    content="Explore the portfolio of Hilmy Hanfa Zainab, a Computer Science undergraduate with experience building two web development projects.">
+  <meta name="author" content="Hilmy Hanfa Zainab">
+  <meta name="theme-color" content="#0b1020">
+
+  <meta property="og:title"
+    content="Hilmy Hanfa Zainab | Portfolio">
+  <meta property="og:description"
+    content="Computer Science undergraduate, web developer and technology enthusiast.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN: no separate CSS file required -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            accent: '#a78bfa',
+            midnight: '#0b1020'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <script>
+    // Apply saved theme before the page is displayed.
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+      }
+    } catch (error) {}
+  </script>
+
+  <style type="text/tailwindcss">
+    html[data-theme="light"] body {
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+
+    html[data-theme="light"] .surface {
+      background-color: #ffffff;
+      border-color: #e2e8f0;
+    }
+
+    html[data-theme="light"] .muted {
+      color: #475569;
+    }
+
+    html[data-theme="light"] .site-header {
+      background-color: rgba(248, 250, 252, 0.92);
+      border-color: #e2e8f0;
+    }
+
+    html[data-theme="light"] .hero-glow {
+      background-image: radial-gradient(
+        circle at top right,
+        rgba(167, 139, 250, 0.16),
+        transparent 45%
+      );
+    }
+
+    html[data-theme="light"] .nav-link {
+      color: #334155;
+    }
+
+    html[data-theme="light"] .nav-link:hover {
+      color: #7c3aed;
+    }
+
+    html[data-theme="light"] .project-tag {
+      background-color: #f1f5f9;
+      color: #475569;
+    }
+
+    html[data-theme="light"] .footer-surface {
+      border-color: #e2e8f0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-slate-100 font-sans antialiased">
+
+  <!-- HEADER -->
+  <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-midnight/90 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12"
+      aria-label="Main navigation">
+
+      <a href="#home" class="text-xl font-extrabold tracking-tight"
+        aria-label="Hilmy Hanfa Zainab home">
+        <span class="text-accent">H.</span>HZ
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a class="nav-link text-sm text-slate-300 transition hover:text-accent" href="#home">Home</a>
+        <a class="nav-link text-sm text-slate-300 transition hover:text-accent" href="#about">About</a>
+        <a class="nav-link text-sm text-slate-300 transition hover:text-accent" href="#education">Education</a>
+        <a class="nav-link text-sm text-slate-300 transition hover:text-accent" href="#skills">Skills</a>
+        <a class="nav-link text-sm text-slate-300 transition hover:text-accent" href="#projects">Projects</a>
+        <a class="nav-link text-sm text-slate-300 transition hover:text-accent" href="#contact">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle"
+          type="button"
+          class="rounded-full border border-white/15 px-3 py-2 text-sm transition hover:border-accent"
+          aria-label="Switch color theme"
+          title="Switch color theme">
+          <span id="theme-icon" aria-hidden="true">☀️</span>
+        </button>
+
+        <button id="menu-toggle"
+          type="button"
+          class="rounded-lg border border-white/15 p-2 text-xl md:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span id="menu-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAVIGATION -->
+    <div id="mobile-menu" class="hidden border-t border-white/10 px-5 py-4 md:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-glow scroll-mt-24">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:px-12 lg:py-36">
+
+        <div>
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm text-violet-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Computer Science Undergraduate
+          </div>
+
+          <p class="mb-4 text-lg text-slate-400">Hello, I'm</p>
+
+          <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Hilmy Hanfa
+            <span class="block text-accent">Zainab.</span>
+          </h1>
+
+          <h2 class="mt-5 text-xl font-semibold text-slate-300 sm:text-2xl">
+            Aspiring Web Developer
+          </h2>
+
+          <p class="muted mt-6 max-w-xl text-base leading-8 text-slate-400 sm:text-lg">
+            I'm a Computer Science undergraduate passionate about
+            technology, problem-solving and creating useful digital
+            experiences. I've completed two web development projects
+            and I'm excited to keep learning and building.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="#projects"
+              class="inline-flex items-center justify-center rounded-xl bg-violet-500 px-6 py-3.5 font-semibold text-white transition hover:bg-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-300">
+              View My Projects <span class="ml-2" aria-hidden="true">↗</span>
+            </a>
+
+            <a href="#contact"
+              class="inline-flex items-center justify-center rounded-xl border border-white/20 px-6 py-3.5 font-semibold transition hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-violet-300">
+              Contact Me
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+            <span class="rounded-lg border border-white/10 px-3 py-2">💻 Web Development</span>
+            <span class="rounded-lg border border-white/10 px-3 py-2">📚 Continuous Learning</span>
+          </div>
+        </div>
+
+        <!-- PROFILE CARD -->
+        <div class="mx-auto w-full max-w-md">
+          <div class="surface relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-violet-950/30 sm:p-8">
+            <div class="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl"></div>
+
+            <div class="relative">
+              <div class="mx-auto flex h-36 w-36 items-center justify-center rounded-full border border-violet-400/40 bg-gradient-to-br from-violet-500/30 to-indigo-500/10 text-5xl font-extrabold text-violet-200">
+                HZ
+              </div>
+
+              <div class="mt-6 text-center">
+                <h2 class="text-2xl font-bold">Hilmy Hanfa Zainab</h2>
+                <p class="muted mt-2 text-slate-400">Computer Science Undergraduate</p>
+              </div>
+
+              <div class="mt-8 grid grid-cols-2 gap-4">
+                <div class="surface rounded-2xl border border-white/10 bg-midnight/70 p-4 text-center">
+                  <p class="text-3xl font-extrabold text-accent">02</p>
+                  <p class="muted mt-2 text-sm text-slate-400">Web Projects</p>
+                </div>
+
+                <div class="surface rounded-2xl border border-white/10 bg-midnight/70 p-4 text-center">
+                  <p class="text-3xl font-extrabold text-accent">CS</p>
+                  <p class="muted mt-2 text-sm text-slate-400">Undergraduate</p>
+                </div>
+              </div>
+
+              <div class="mt-6 rounded-2xl border border-violet-400/20 bg-violet-400/5 p-4">
+                <p class="text-sm leading-7 text-slate-300">
+                  "Learning, creating and growing through technology."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="scroll-mt-24 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div class="max-w-3xl">
+          <p class="mb-3 font-semibold uppercase tracking-[0.2em] text-accent">Get to know me</p>
+          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">About Me</h2>
+
+          <p class="muted mt-6 leading-8 text-slate-400">
+            I am a Computer Science undergraduate who enjoys exploring
+            how technology can solve real-world problems. Through my
+            learning journey, I have gained experience developing
+            websites and understanding the fundamentals of web
+            development.
+          </p>
+
+          <p class="muted mt-4 leading-8 text-slate-400">
+            I have completed two web development projects that helped
+            me practise my technical skills, improve my problem-solving
+            abilities and understand the process of building a website.
+            My goal is to continue improving my skills and contribute
+            to meaningful technology projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION AND QUALIFICATIONS -->
+    <section id="education" class="scroll-mt-24 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <p class="mb-3 font-semibold uppercase tracking-[0.2em] text-accent">My background</p>
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Education & Qualifications</h2>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="surface rounded-2xl border border-white/10 bg-white/[0.04] p-7">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/15 text-2xl" aria-hidden="true">
+              🎓
+            </div>
+            <h3 class="text-xl font-bold">Computer Science</h3>
+            <p class="mt-2 text-accent">Undergraduate Studies</p>
+            <p class="muted mt-4 leading-7 text-slate-400">
+              Currently pursuing undergraduate studies in Computer
+              Science, developing knowledge of programming, software
+              development and computing fundamentals.
+            </p>
+          </article>
+
+          <article class="surface rounded-2xl border border-white/10 bg-white/[0.04] p-7">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/15 text-2xl" aria-hidden="true">
+              🏆
+            </div>
+            <h3 class="text-xl font-bold">Web Development Experience</h3>
+            <p class="mt-2 text-accent">2 Completed Projects</p>
+            <p class="muted mt-4 leading-7 text-slate-400">
+              Completed two web development projects to practise
+              website structure, interface design and programming.
+              See the Projects section for details.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="scroll-mt-24 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <p class="mb-3 font-semibold uppercase tracking-[0.2em] text-accent">What I work with</p>
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">My Skills</h2>
+
+        <p class="muted mt-4 max-w-2xl leading-7 text-slate-400">
+          These are example skill categories for a web development portfolio.
+          Update the list to match the technologies you have actually used.
+        </p>
+
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div class="surface rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-violet-400/50">
+            <span class="text-2xl" aria-hidden="true">🌐</span>
+            <h3 class="mt-4 font-bold">HTML5</h3>
+            <p class="muted mt-2 text-sm text-slate-400">Web structure</p>
+          </div>
+
+          <div class="surface rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-violet-400/50">
+            <span class="text-2xl" aria-hidden="true">🎨</span>
+            <h3 class="mt-4 font-bold">CSS / Tailwind</h3>
+            <p class="muted mt-2 text-sm text-slate-400">Web styling</p>
+          </div>
+
+          <div class="surface rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-violet-400/50">
+            <span class="text-2xl" aria-hidden="true">⚡</span>
+            <h3 class="mt-4 font-bold">JavaScript</h3>
+            <p class="muted mt-2 text-sm text-slate-400">Interactivity</p>
+          </div>
+
+          <div class="surface rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-violet-400/50">
+            <span class="text-2xl" aria-hidden="true">📱</span>
+            <h3 class="mt-4 font-bold">Responsive Design</h3>
+            <p class="muted mt-2 text-sm text-slate-400">Multi-device layouts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="scroll-mt-24 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <p class="mb-3 font-semibold uppercase tracking-[0.2em] text-accent">What I've built</p>
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">My Projects</h2>
+
+        <p class="muted mt-4 max-w-2xl leading-7 text-slate-400">
+          Two web development projects completed as part of my learning journey.
+          Replace the example titles and descriptions below with your real projects.
+        </p>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+
+          <!-- PROJECT 1 -->
+          <article class="surface overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition hover:-translate-y-1 hover:border-violet-400/40">
+            <div class="flex h-44 items-center justify-center bg-gradient-to-br from-violet-600/30 via-indigo-600/20 to-slate-900">
+              <div class="text-center">
+                <span class="text-5xl" aria-hidden="true">💻</span>
+                <p class="mt-3 font-semibold tracking-wide text-violet-200">PROJECT 01</p>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-7">
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Web Development</span>
+                <span class="project-tag rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Responsive UI</span>
+              </div>
+
+              <h3 class="mt-5 text-xl font-bold">Web Development Project 01</h3>
+              <p class="muted mt-3 leading-7 text-slate-400">
+                Add your first project's actual name, its purpose,
+                the problem it solves and the main features you developed.
+              </p>
+
+              <p class="mt-4 text-sm text-slate-400">
+                <strong class="text-slate-200">Technologies:</strong>
+                <span> Add your project technologies</span>
+              </p>
+
+              <a href="#contact"
+                class="mt-6 inline-flex items-center font-semibold text-accent transition hover:text-violet-300">
+                Ask me about this project <span class="ml-2" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="surface overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition hover:-translate-y-1 hover:border-violet-400/40">
+            <div class="flex h-44 items-center justify-center bg-gradient-to-br from-cyan-600/20 via-blue-600/20 to-slate-900">
+              <div class="text-center">
+                <span class="text-5xl" aria-hidden="true">🚀</span>
+                <p class="mt-3 font-semibold tracking-wide text-cyan-200">PROJECT 02</p>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-7">
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Web Development</span>
+                <span class="project-tag rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Problem Solving</span>
+              </div>
+
+              <h3 class="mt-5 text-xl font-bold">Web Development Project 02</h3>
+              <p class="muted mt-3 leading-7 text-slate-400">
+                Describe your second project's purpose, key features,
+                what you learned and how you contributed to building it.
+              </p>
+
+              <p class="mt-4 text-sm text-slate-400">
+                <strong class="text-slate-200">Technologies:</strong>
+                <span> Add your project technologies</span>
+              </p>
+
+              <a href="#contact"
+                class="mt-6 inline-flex items-center font-semibold text-accent transition hover:text-violet-300">
+                Ask me about this project <span class="ml-2" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="scroll-mt-24 border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div class="surface overflow-hidden rounded-3xl border border-violet-400/20 bg-gradient-to-br from-violet-500/10 to-indigo-500/5 p-7 sm:p-12">
+          <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+            <div>
+              <p class="mb-3 font-semibold uppercase tracking-[0.2em] text-accent">Let's connect</p>
+              <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Contact Me</h2>
+
+              <p class="muted mt-5 max-w-lg leading-8 text-slate-400">
+                I'm interested in learning opportunities, collaborating
+                on web development projects and connecting with people
+                who enjoy technology.
+              </p>
+
+              <p class="mt-7 font-semibold">Hilmy Hanfa Zainab</p>
+              <p class="muted mt-2 text-slate-400">Computer Science Undergraduate</p>
+
+              <!-- Replace this email with your real email -->
+              <a id="email-link"
+                href="mailto:your-email@example.com"
+                class="mt-5 inline-flex items-center break-all font-medium text-accent hover:underline">
+                ✉ your-email@example.com
+              </a>
+            </div>
+
+            <!-- This form opens the visitor's email application.
+                 It does not send messages to a server. -->
+            <form id="contact-form" class="space-y-5">
+              <div>
+                <label for="name" class="mb-2 block text-sm font-semibold">Your name</label>
+                <input id="name" name="name" type="text" required maxlength="100"
+                  autocomplete="name"
+                  placeholder="Enter your name"
+                  class="w-full rounded-xl border border-white/15 bg-midnight/70 px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20">
+              </div>
+
+              <div>
+                <label for="sender-email" class="mb-2 block text-sm font-semibold">Your email</label>
+                <input id="sender-email" name="email" type="email" required maxlength="254"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  class="w-full rounded-xl border border-white/15 bg-midnight/70 px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20">
+              </div>
+
+              <div>
+                <label for="message" class="mb-2 block text-sm font-semibold">Your message</label>
+                <textarea id="message" name="message" rows="4" required maxlength="3000"
+                  placeholder="Write your message here..."
+                  class="w-full resize-y rounded-xl border border-white/15 bg-midnight/70 px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full rounded-xl bg-violet-500 px-6 py-3.5 font-semibold text-white transition hover:bg-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-300">
+                Send Message ↗
+              </button>
+
+              <p id="form-status" class="muted text-sm text-slate-400"
+                role="status" aria-live="polite"></p>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-surface border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 text-center sm:px-8 md:flex-row lg:px-12">
+
+      <a href="#home" class="text-lg font-extrabold">
+        <span class="text-accent">H.</span>HZ
+      </a>
+
+      <p class="muted text-sm text-slate-400">
+        © <span id="current-year"></span> Hilmy Hanfa Zainab.
+        All rights reserved.
+      </p>
+
+      <a href="#home" class="text-sm text-accent hover:underline">
+        Back to top ↑
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
